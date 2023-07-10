@@ -15,6 +15,8 @@ function quantityIncrease(productId) {
   quantity++;
   quantityInput.value = quantity;
 }
+
+//function to get product info
 function getProductDetails(productId) {
   let product = null;
   switch (productId) {
@@ -155,7 +157,7 @@ function removeFromCart(productId) {
   // Check if the cart is empty
   if (updatedCartItems.length === 0) {
     document.getElementById("cart-content").innerHTML =
-      "<p>Your cart is empty.</p>";
+      "Your cart is empty.";
   }
 }
 
@@ -166,7 +168,7 @@ function displayCartItems() {
 
   if (cartItems.length > 0) {
     // Display the cart items
-    let cartContent = "<h2>Cart Items</h2>";
+    let cartContent = "Cart Items";
     let totalPrice = 0;
     cartItems.forEach((item) => {
       const itemPrice = parseFloat(item.price) * item.quantity;
@@ -189,7 +191,7 @@ function displayCartItems() {
               </div>
           `;
     });
-    cartContent += `<h3>Total Amount: R${totalPrice.toFixed(2)}</h3>`;
+    cartContent += `Total Amount: R${totalPrice.toFixed(2)}`;
     document.getElementById("cart-content").innerHTML = cartContent;
   } else {
     // Display a message when the cart is empty
